@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Is your birthday lucky</title>
+</head>
+
+<body>
+    <nav class="navigation container">
+        <div class="nav-brand">Is your birthday lucky </div>
+    </nav>
+    <header class="hero container container-center">
+        <h1 class="hero-heading"> Cheak is your birthday lucky with <span class="heading-inverted">birthday
+                logic implemented by us </span></h1>
+    </header>
+    <section class="section">
+        <div class="container container-center">
+            <div>
+                <label for="birthday">Date Of Birth</label>
+                <input type="date" class="input" id="birthday" name="birthday" required>
+            </div>
+            <div>
+                <label for="luckyNum">Your Lucky Number</label>
+                <input type="number" class="input" id="luckyNum" name="luckyNum" required>
+            </div>
+
+            <button class="btn btn-primary">Check</button>
+            <button class="btn btn-secondary">reload</button>
+
+            <p id="error-message"></p>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-header"> Connect with me </div>
+        <ul class="social-links list-non-bullet">
+            <li class="list-item-inline"><a class="link" href="https://github.com/rajulkoshta">github</a></li>
+            <li class="list-item-inline"><a class="link" href="https://twitter.com/RajulKoshta">twitter</a></li>
+            <li class="list-item-inline"><a class="link" href="https://www.linkedin.com/in/rajulkoshta/">LinkedIn</a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
