@@ -5,26 +5,29 @@ const reloadBtn = document.querySelector(".btn-secondary");
 const message = document.querySelector("#message");
 
 
-function checkBirthday(){
-    hideMessage(); 
-    const dob= birthDay.value;
+function checkBirthday() {
+    hideMessage();
+    const dob = birthDay.value;
     const luckyno = luckyNumber.value;
-    const sum = calculateSum(dob);
-    if(sum % luckyno == 0){
-        showMessage("Congratulations your birthday is lucky🥳");
-    }
-    else{
-        showMessage("Sorry according to the logic "+luckyno+" is not that lucky😟")
+    if (luckyno === "" || dob === "" || luckyno < 0) {
+        showMessage("invalid details");
+    } else {
+        const sum = calculateSum(dob);
+        if (sum % luckyno == 0) {
+            showMessage("Congratulations your birthday is lucky🥳");
+        } else {
+            showMessage("Sorry according to the logic " + luckyno + " is not that lucky😟")
+        }
     }
 }
 
-function calculateSum(dob){
-        dob = dob.replaceAll('-','');
-        let sum=0;
-        for(var index=0 ; index < dob.length ; index++){
-            sum = sum + Number(dob.charAt(index));
-        }
-        return sum;
+function calculateSum(dob) {
+    dob = dob.replaceAll('-', '');
+    let sum = 0;
+    for (var index = 0; index < dob.length; index++) {
+        sum = sum + Number(dob.charAt(index));
+    }
+    return sum;
 }
 
 checkBtn.addEventListener("click", checkBirthday);
@@ -36,12 +39,13 @@ function hideMessage() {
 
 function showMessage(msg) {
     message.style.display = "block";
-    message.innerText =msg;
+    message.innerText = msg;
 
 }
 
 
 reloadBtn.addEventListener("click", refresh);
-function refresh(){
+
+function refresh() {
     window.location.reload("Refresh");
-  }
+}
